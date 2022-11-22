@@ -1,37 +1,37 @@
 :root{
-    --background: #ee9b00;
-    --codewords: #e9d8a6;
-    --headers: #9b2226;
-    --subheading: #bb3e03;
-    --borders: #005f73;
+    --background: #cad2c5;
+    --codewords: #344e41;
+    --headers: #2f3e46;
+    --subheading: #354f52;
+    --borders: #3a5a40;
     --smallcurve: 5px;
-    --gradientlight:#94d2bd;
-    --gradientdark:#005f73;
+    --gradientlight:#84a98c;
+    --gradientdark:#a3b18a;
 }
 
 body{
     background-color: var(--background);
+    font-size: 16px;
+    color: var(--subheading);
 }
 
 header{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    margin: 20px;
 }
 
 header > h1{
     color: var(--headers);
-}
-
-header > p{
-    color: var(--subheading);
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
 .grid{
     display: flex;
     flex-wrap: wrap;
+    margin: 36px 0;
 }
 
 .card{
@@ -40,9 +40,12 @@ header > p{
     margin: 10px 10px;
     padding: 20px;
     width: calc(33.33% - 20px);
+    transition: box-shadow 500ms ease;
 }
 
 .card-header {
+    display: flex;
+    justify-content: center;
     position: relative;
     background-color: var(--background);
     margin-top: -30px;
@@ -50,20 +53,49 @@ header > p{
     border-radius: var(--smallcurve);
     color: var(--headers);
     padding: 10px;
+    transition: box-shadow 500ms ease;
+}
+
+.card:hover,
+.card-header:hover{
+    box-shadow: 0 0 8px #2e3027;
+}
+
+.card > p{
+    margin-top: 10px;
+}
+
+code{
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .code-tile{
+    display: flex;
+    flex: 1;
     width: 100%;
     background-image: linear-gradient(var(--gradientdark) 0%, var(--gradientlight) 100%);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
     color: var(--codewords);
     border-radius: var(--smallcurve);
-    margin: 10px 0 0 0;
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid var(--borders);
 }
 
 footer{
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 1160px) {
+    .card{
+        width: calc(50% - 32px);
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .card{
+        width: calc(100% - 32px);
+    }
+    
 }
