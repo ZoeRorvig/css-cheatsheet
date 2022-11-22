@@ -1,0 +1,69 @@
+:root{
+    --background: #ee9b00;
+    --codewords: #e9d8a6;
+    --headers: #9b2226;
+    --subheading: #bb3e03;
+    --borders: #005f73;
+    --smallcurve: 5px;
+    --gradientlight:#94d2bd;
+    --gradientdark:#005f73;
+}
+
+body{
+    background-color: var(--background);
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+header > h1{
+    color: var(--headers);
+}
+
+header > p{
+    color: var(--subheading);
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    color: var(--subheading);
+    border: 2px dashed var(--borders);
+    margin: 10px 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+}
+
+.card-header {
+    position: relative;
+    background-color: var(--background);
+    margin-top: -30px;
+    border: 2px solid var(--borders);
+    border-radius: var(--smallcurve);
+    color: var(--headers);
+    padding: 10px;
+}
+
+.code-tile{
+    width: 100%;
+    background-image: linear-gradient(var(--gradientdark) 0%, var(--gradientlight) 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    color: var(--codewords);
+    border-radius: var(--smallcurve);
+    margin: 10px 0 0 0;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
